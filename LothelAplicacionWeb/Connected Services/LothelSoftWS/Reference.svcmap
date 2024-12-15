@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="12de35a3-72c3-4e41-8dc5-1fdc355d1f30" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/LothelSoftWS/referencias.disco" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="referencias.disco" MetadataType="Disco" ID="04dec547-efc8-4fa6-b651-88cab265db48" SourceId="1" SourceUrl="http://localhost:8080/LothelSoftWS/referencias.disco" />
+    <MetadataFile FileName="RRHHWS.wsdl" MetadataType="Wsdl" ID="e68e6add-1d6a-462a-894e-fb854a160e7c" SourceId="1" SourceUrl="http://localhost:8080/LothelSoftWS/RRHHWS?WSDL" />
+    <MetadataFile FileName="RRHHWS.xsd" MetadataType="Schema" ID="3e1f7ca1-66ab-450a-adee-482dcc5de960" SourceId="1" SourceUrl="http://localhost:8080/LothelSoftWS/RRHHWS?xsd=1" />
+    <MetadataFile FileName="EventosWS.wsdl" MetadataType="Wsdl" ID="1d09e6f9-8a45-4be1-88dd-7388f118d25c" SourceId="1" SourceUrl="http://localhost:8080/LothelSoftWS/EventosWS?WSDL" />
+    <MetadataFile FileName="VentasWS.xsd" MetadataType="Schema" ID="c5ea796a-a32f-4eb1-a2c1-31c6c4f6edcc" SourceId="1" SourceUrl="http://localhost:8080/LothelSoftWS/VentasWS?xsd=1" />
+    <MetadataFile FileName="VentasWS.wsdl" MetadataType="Wsdl" ID="20150ef5-4505-4611-8c19-721de3c40e04" SourceId="1" SourceUrl="http://localhost:8080/LothelSoftWS/VentasWS?WSDL" />
+    <MetadataFile FileName="ReservasWS.xsd" MetadataType="Schema" ID="6264bf3c-c0d9-43ab-af9d-6288cd4e1700" SourceId="1" SourceUrl="http://localhost:8080/LothelSoftWS/ReservasWS?xsd=1" />
+    <MetadataFile FileName="EventosWS.xsd" MetadataType="Schema" ID="85ba8038-3632-412e-af20-d9cfb4a33bf7" SourceId="1" SourceUrl="http://localhost:8080/LothelSoftWS/EventosWS?xsd=1" />
+    <MetadataFile FileName="ReservasWS.wsdl" MetadataType="Wsdl" ID="24a5d5e1-7104-442f-badc-398afe3be129" SourceId="1" SourceUrl="http://localhost:8080/LothelSoftWS/ReservasWS?WSDL" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

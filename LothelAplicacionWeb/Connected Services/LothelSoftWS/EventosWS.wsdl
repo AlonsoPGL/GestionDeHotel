@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lothel.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="EventosWS" targetNamespace="http://services.lothel.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LothelSoftWS/EventosWS?xsd=1" namespace="http://services.lothel.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="listarEventosPorNombre">
+    <part name="parameters" element="tns:listarEventosPorNombre" />
+  </message>
+  <message name="listarEventosPorNombreResponse">
+    <part name="parameters" element="tns:listarEventosPorNombreResponse" />
+  </message>
+  <message name="listarReservasXIdEvento">
+    <part name="parameters" element="tns:listarReservasXIdEvento" />
+  </message>
+  <message name="listarReservasXIdEventoResponse">
+    <part name="parameters" element="tns:listarReservasXIdEventoResponse" />
+  </message>
+  <message name="registrarEmpresaProveedora">
+    <part name="parameters" element="tns:registrarEmpresaProveedora" />
+  </message>
+  <message name="registrarEmpresaProveedoraResponse">
+    <part name="parameters" element="tns:registrarEmpresaProveedoraResponse" />
+  </message>
+  <message name="listarHorasDisponibles">
+    <part name="parameters" element="tns:listarHorasDisponibles" />
+  </message>
+  <message name="listarHorasDisponiblesResponse">
+    <part name="parameters" element="tns:listarHorasDisponiblesResponse" />
+  </message>
+  <message name="listarEmpresasProveedoras">
+    <part name="parameters" element="tns:listarEmpresasProveedoras" />
+  </message>
+  <message name="listarEmpresasProveedorasResponse">
+    <part name="parameters" element="tns:listarEmpresasProveedorasResponse" />
+  </message>
+  <message name="eliminarEmpresaProveedora">
+    <part name="parameters" element="tns:eliminarEmpresaProveedora" />
+  </message>
+  <message name="eliminarEmpresaProveedoraResponse">
+    <part name="parameters" element="tns:eliminarEmpresaProveedoraResponse" />
+  </message>
+  <message name="modificarEmpresaProveedora">
+    <part name="parameters" element="tns:modificarEmpresaProveedora" />
+  </message>
+  <message name="modificarEmpresaProveedoraResponse">
+    <part name="parameters" element="tns:modificarEmpresaProveedoraResponse" />
+  </message>
+  <message name="listarEspaciosPorNombre">
+    <part name="parameters" element="tns:listarEspaciosPorNombre" />
+  </message>
+  <message name="listarEspaciosPorNombreResponse">
+    <part name="parameters" element="tns:listarEspaciosPorNombreResponse" />
+  </message>
+  <message name="listarEspacios">
+    <part name="parameters" element="tns:listarEspacios" />
+  </message>
+  <message name="listarEspaciosResponse">
+    <part name="parameters" element="tns:listarEspaciosResponse" />
+  </message>
+  <message name="listarEventos">
+    <part name="parameters" element="tns:listarEventos" />
+  </message>
+  <message name="listarEventosResponse">
+    <part name="parameters" element="tns:listarEventosResponse" />
+  </message>
+  <message name="registrarEspacio">
+    <part name="parameters" element="tns:registrarEspacio" />
+  </message>
+  <message name="registrarEspacioResponse">
+    <part name="parameters" element="tns:registrarEspacioResponse" />
+  </message>
+  <message name="eliminarEspacio">
+    <part name="parameters" element="tns:eliminarEspacio" />
+  </message>
+  <message name="eliminarEspacioResponse">
+    <part name="parameters" element="tns:eliminarEspacioResponse" />
+  </message>
+  <message name="modificarEspacio">
+    <part name="parameters" element="tns:modificarEspacio" />
+  </message>
+  <message name="modificarEspacioResponse">
+    <part name="parameters" element="tns:modificarEspacioResponse" />
+  </message>
+  <message name="modificarEvento">
+    <part name="parameters" element="tns:modificarEvento" />
+  </message>
+  <message name="modificarEventoResponse">
+    <part name="parameters" element="tns:modificarEventoResponse" />
+  </message>
+  <message name="registrarEvento">
+    <part name="parameters" element="tns:registrarEvento" />
+  </message>
+  <message name="registrarEventoResponse">
+    <part name="parameters" element="tns:registrarEventoResponse" />
+  </message>
+  <message name="eliminarEvento">
+    <part name="parameters" element="tns:eliminarEvento" />
+  </message>
+  <message name="eliminarEventoResponse">
+    <part name="parameters" element="tns:eliminarEventoResponse" />
+  </message>
+  <portType name="EventosWS">
+    <operation name="listarEventosPorNombre">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarEventosPorNombreRequest" message="tns:listarEventosPorNombre" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarEventosPorNombreResponse" message="tns:listarEventosPorNombreResponse" />
+    </operation>
+    <operation name="listarReservasXIdEvento">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarReservasXIdEventoRequest" message="tns:listarReservasXIdEvento" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarReservasXIdEventoResponse" message="tns:listarReservasXIdEventoResponse" />
+    </operation>
+    <operation name="registrarEmpresaProveedora">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/registrarEmpresaProveedoraRequest" message="tns:registrarEmpresaProveedora" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/registrarEmpresaProveedoraResponse" message="tns:registrarEmpresaProveedoraResponse" />
+    </operation>
+    <operation name="listarHorasDisponibles">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarHorasDisponiblesRequest" message="tns:listarHorasDisponibles" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarHorasDisponiblesResponse" message="tns:listarHorasDisponiblesResponse" />
+    </operation>
+    <operation name="listarEmpresasProveedoras">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarEmpresasProveedorasRequest" message="tns:listarEmpresasProveedoras" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarEmpresasProveedorasResponse" message="tns:listarEmpresasProveedorasResponse" />
+    </operation>
+    <operation name="eliminarEmpresaProveedora">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/eliminarEmpresaProveedoraRequest" message="tns:eliminarEmpresaProveedora" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/eliminarEmpresaProveedoraResponse" message="tns:eliminarEmpresaProveedoraResponse" />
+    </operation>
+    <operation name="modificarEmpresaProveedora">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/modificarEmpresaProveedoraRequest" message="tns:modificarEmpresaProveedora" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/modificarEmpresaProveedoraResponse" message="tns:modificarEmpresaProveedoraResponse" />
+    </operation>
+    <operation name="listarEspaciosPorNombre">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarEspaciosPorNombreRequest" message="tns:listarEspaciosPorNombre" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarEspaciosPorNombreResponse" message="tns:listarEspaciosPorNombreResponse" />
+    </operation>
+    <operation name="listarEspacios">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarEspaciosRequest" message="tns:listarEspacios" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarEspaciosResponse" message="tns:listarEspaciosResponse" />
+    </operation>
+    <operation name="listarEventos">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarEventosRequest" message="tns:listarEventos" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/listarEventosResponse" message="tns:listarEventosResponse" />
+    </operation>
+    <operation name="registrarEspacio">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/registrarEspacioRequest" message="tns:registrarEspacio" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/registrarEspacioResponse" message="tns:registrarEspacioResponse" />
+    </operation>
+    <operation name="eliminarEspacio">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/eliminarEspacioRequest" message="tns:eliminarEspacio" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/eliminarEspacioResponse" message="tns:eliminarEspacioResponse" />
+    </operation>
+    <operation name="modificarEspacio">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/modificarEspacioRequest" message="tns:modificarEspacio" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/modificarEspacioResponse" message="tns:modificarEspacioResponse" />
+    </operation>
+    <operation name="modificarEvento">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/modificarEventoRequest" message="tns:modificarEvento" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/modificarEventoResponse" message="tns:modificarEventoResponse" />
+    </operation>
+    <operation name="registrarEvento">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/registrarEventoRequest" message="tns:registrarEvento" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/registrarEventoResponse" message="tns:registrarEventoResponse" />
+    </operation>
+    <operation name="eliminarEvento">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/eliminarEventoRequest" message="tns:eliminarEvento" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/EventosWS/eliminarEventoResponse" message="tns:eliminarEventoResponse" />
+    </operation>
+  </portType>
+  <binding name="EventosWSPortBinding" type="tns:EventosWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarEventosPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarReservasXIdEvento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registrarEmpresaProveedora">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarHorasDisponibles">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEmpresasProveedoras">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarEmpresaProveedora">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarEmpresaProveedora">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEspaciosPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEspacios">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEventos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registrarEspacio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarEspacio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarEspacio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarEvento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registrarEvento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarEvento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EventosWS">
+    <port name="EventosWSPort" binding="tns:EventosWSPortBinding">
+      <soap:address location="http://localhost:8080/LothelSoftWS/EventosWS" />
+    </port>
+  </service>
+</definitions>

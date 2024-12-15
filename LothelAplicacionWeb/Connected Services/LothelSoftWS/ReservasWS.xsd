@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.lothel.pucp.edu.pe/" targetNamespace="http://services.lothel.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ListarFamiliar" type="tns:ListarFamiliar" />
+  <xs:element name="ListarFamiliarPorFechaYTipo" type="tns:ListarFamiliarPorFechaYTipo" />
+  <xs:element name="ListarFamiliarPorFechaYTipoResponse" type="tns:ListarFamiliarPorFechaYTipoResponse" />
+  <xs:element name="ListarFamiliarResponse" type="tns:ListarFamiliarResponse" />
+  <xs:element name="ListarHabitacionesInicio" type="tns:ListarHabitacionesInicio" />
+  <xs:element name="ListarHabitacionesInicioResponse" type="tns:ListarHabitacionesInicioResponse" />
+  <xs:element name="ListarMatrimonialPorFechaYTipo" type="tns:ListarMatrimonialPorFechaYTipo" />
+  <xs:element name="ListarMatrimonialPorFechaYTipoResponse" type="tns:ListarMatrimonialPorFechaYTipoResponse" />
+  <xs:element name="ListarMatrimoniales" type="tns:ListarMatrimoniales" />
+  <xs:element name="ListarMatrimonialesResponse" type="tns:ListarMatrimonialesResponse" />
+  <xs:element name="ListarReservaXIDHuesped" type="tns:ListarReservaXIDHuesped" />
+  <xs:element name="ListarReservaXIDHuespedResponse" type="tns:ListarReservaXIDHuespedResponse" />
+  <xs:element name="ListarSimplePorFechaYTipo" type="tns:ListarSimplePorFechaYTipo" />
+  <xs:element name="ListarSimplePorFechaYTipoResponse" type="tns:ListarSimplePorFechaYTipoResponse" />
+  <xs:element name="ListarSimples" type="tns:ListarSimples" />
+  <xs:element name="ListarSimplesResponse" type="tns:ListarSimplesResponse" />
+  <xs:element name="ListarTodasHabitaciones" type="tns:ListarTodasHabitaciones" />
+  <xs:element name="ListarTodasHabitacionesResponse" type="tns:ListarTodasHabitacionesResponse" />
+  <xs:element name="eliminarReservaHabitacion" type="tns:eliminarReservaHabitacion" />
+  <xs:element name="eliminarReservaHabitacionResponse" type="tns:eliminarReservaHabitacionResponse" />
+  <xs:element name="insertarReservaHabitacion" type="tns:insertarReservaHabitacion" />
+  <xs:element name="insertarReservaHabitacionResponse" type="tns:insertarReservaHabitacionResponse" />
+  <xs:element name="listarHabitacionXidHuesped" type="tns:listarHabitacionXidHuesped" />
+  <xs:element name="listarHabitacionXidHuespedResponse" type="tns:listarHabitacionXidHuespedResponse" />
+  <xs:element name="listarReservasEnCurso" type="tns:listarReservasEnCurso" />
+  <xs:element name="listarReservasEnCursoResponse" type="tns:listarReservasEnCursoResponse" />
+  <xs:complexType name="ListarFamiliarPorFechaYTipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaDesde" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaHasta" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarFamiliarPorFechaYTipoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:familiar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="familiar">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:habitacion">
+        <xs:sequence>
+          <xs:element name="cocheraPropia" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="habitacion">
+    <xs:sequence>
+      <xs:element name="cantHuespedes" type="xs:int" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="estado" type="xs:boolean" />
+      <xs:element name="idHabitacion" type="xs:int" />
+      <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
+      <xs:element name="numeroDeCamas" type="xs:int" />
+      <xs:element name="piso" type="xs:int" />
+      <xs:element name="precio" type="xs:double" />
+      <xs:element name="reservado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="reservas" nillable="true" type="tns:reservaHabitacion" />
+      <xs:element name="stock" type="xs:int" />
+      <xs:element minOccurs="0" name="titulo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reservaHabitacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estado" type="tns:estadoReserva" />
+      <xs:element minOccurs="0" name="fechaDeReserva" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="habitacion" type="tns:habitacion" />
+      <xs:element minOccurs="0" name="huesped" type="tns:huesped" />
+      <xs:element name="idReserva" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="huesped">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="esVIP" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="celular" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="cuenta" type="tns:cuenta" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element name="estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fechaRegistro" type="xs:dateTime" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cuenta">
+    <xs:sequence>
+      <xs:element name="idCuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="tipocuenta" type="tns:tipoCuenta" />
+      <xs:element minOccurs="0" name="user" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarSimples">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListarSimplesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:simple" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="simple">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:habitacion">
+        <xs:sequence>
+          <xs:element name="servicioStreaming" type="xs:boolean" />
+          <xs:element name="tieneVistaInterior" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="insertarReservaHabitacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="reserva" type="tns:reservaHabitacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarReservaHabitacionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarMatrimonialPorFechaYTipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaDesde" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaHasta" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarMatrimonialPorFechaYTipoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matrimonial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="matrimonial">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:habitacion">
+        <xs:sequence>
+          <xs:element name="tieneJacuzzi" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListarTodasHabitaciones">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListarTodasHabitacionesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:habitacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarHabitacionXidHuesped">
+    <xs:sequence>
+      <xs:element name="idReserva" type="xs:int" />
+      <xs:element name="idHabitacion" type="xs:int" />
+      <xs:element name="idHuesped" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarHabitacionXidHuespedResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:habitacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarMatrimoniales">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListarMatrimonialesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matrimonial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarFamiliar">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListarFamiliarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:familiar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarReservaHabitacion">
+    <xs:sequence>
+      <xs:element name="idReserva" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarReservaHabitacionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarReservasEnCurso">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarReservasEnCursoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:reservaHabitacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarSimplePorFechaYTipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaDesde" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaHasta" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarSimplePorFechaYTipoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:simple" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarHabitacionesInicio">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListarHabitacionesInicioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:habitacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarReservaXIDHuesped">
+    <xs:sequence>
+      <xs:element name="idHuesped" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarReservaXIDHuespedResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:reservaHabitacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="estadoReserva">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EN_CURSO" />
+      <xs:enumeration value="COMPLETADA" />
+      <xs:enumeration value="CONFIRMADA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoCuenta">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADMINISTRADOR" />
+      <xs:enumeration value="HUESPED" />
+      <xs:enumeration value="PERSONAL_DE_LAVANDERIA" />
+      <xs:enumeration value="PERSONAL_DE_MASAJES" />
+      <xs:enumeration value="RECEPCIONISTA" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

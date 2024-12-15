@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lothel.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ReservasWS" targetNamespace="http://services.lothel.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LothelSoftWS/ReservasWS?xsd=1" namespace="http://services.lothel.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="ListarSimplePorFechaYTipo">
+    <part name="parameters" element="tns:ListarSimplePorFechaYTipo" />
+  </message>
+  <message name="ListarSimplePorFechaYTipoResponse">
+    <part name="parameters" element="tns:ListarSimplePorFechaYTipoResponse" />
+  </message>
+  <message name="ListarHabitacionesInicio">
+    <part name="parameters" element="tns:ListarHabitacionesInicio" />
+  </message>
+  <message name="ListarHabitacionesInicioResponse">
+    <part name="parameters" element="tns:ListarHabitacionesInicioResponse" />
+  </message>
+  <message name="listarHabitacionXidHuesped">
+    <part name="parameters" element="tns:listarHabitacionXidHuesped" />
+  </message>
+  <message name="listarHabitacionXidHuespedResponse">
+    <part name="parameters" element="tns:listarHabitacionXidHuespedResponse" />
+  </message>
+  <message name="listarReservasEnCurso">
+    <part name="parameters" element="tns:listarReservasEnCurso" />
+  </message>
+  <message name="listarReservasEnCursoResponse">
+    <part name="parameters" element="tns:listarReservasEnCursoResponse" />
+  </message>
+  <message name="insertarReservaHabitacion">
+    <part name="parameters" element="tns:insertarReservaHabitacion" />
+  </message>
+  <message name="insertarReservaHabitacionResponse">
+    <part name="parameters" element="tns:insertarReservaHabitacionResponse" />
+  </message>
+  <message name="ListarReservaXIDHuesped">
+    <part name="parameters" element="tns:ListarReservaXIDHuesped" />
+  </message>
+  <message name="ListarReservaXIDHuespedResponse">
+    <part name="parameters" element="tns:ListarReservaXIDHuespedResponse" />
+  </message>
+  <message name="eliminarReservaHabitacion">
+    <part name="parameters" element="tns:eliminarReservaHabitacion" />
+  </message>
+  <message name="eliminarReservaHabitacionResponse">
+    <part name="parameters" element="tns:eliminarReservaHabitacionResponse" />
+  </message>
+  <message name="ListarTodasHabitaciones">
+    <part name="parameters" element="tns:ListarTodasHabitaciones" />
+  </message>
+  <message name="ListarTodasHabitacionesResponse">
+    <part name="parameters" element="tns:ListarTodasHabitacionesResponse" />
+  </message>
+  <message name="ListarMatrimoniales">
+    <part name="parameters" element="tns:ListarMatrimoniales" />
+  </message>
+  <message name="ListarMatrimonialesResponse">
+    <part name="parameters" element="tns:ListarMatrimonialesResponse" />
+  </message>
+  <message name="ListarFamiliar">
+    <part name="parameters" element="tns:ListarFamiliar" />
+  </message>
+  <message name="ListarFamiliarResponse">
+    <part name="parameters" element="tns:ListarFamiliarResponse" />
+  </message>
+  <message name="ListarSimples">
+    <part name="parameters" element="tns:ListarSimples" />
+  </message>
+  <message name="ListarSimplesResponse">
+    <part name="parameters" element="tns:ListarSimplesResponse" />
+  </message>
+  <message name="ListarMatrimonialPorFechaYTipo">
+    <part name="parameters" element="tns:ListarMatrimonialPorFechaYTipo" />
+  </message>
+  <message name="ListarMatrimonialPorFechaYTipoResponse">
+    <part name="parameters" element="tns:ListarMatrimonialPorFechaYTipoResponse" />
+  </message>
+  <message name="ListarFamiliarPorFechaYTipo">
+    <part name="parameters" element="tns:ListarFamiliarPorFechaYTipo" />
+  </message>
+  <message name="ListarFamiliarPorFechaYTipoResponse">
+    <part name="parameters" element="tns:ListarFamiliarPorFechaYTipoResponse" />
+  </message>
+  <portType name="ReservasWS">
+    <operation name="ListarSimplePorFechaYTipo">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarSimplePorFechaYTipoRequest" message="tns:ListarSimplePorFechaYTipo" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarSimplePorFechaYTipoResponse" message="tns:ListarSimplePorFechaYTipoResponse" />
+    </operation>
+    <operation name="ListarHabitacionesInicio">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarHabitacionesInicioRequest" message="tns:ListarHabitacionesInicio" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarHabitacionesInicioResponse" message="tns:ListarHabitacionesInicioResponse" />
+    </operation>
+    <operation name="listarHabitacionXidHuesped">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/listarHabitacionXidHuespedRequest" message="tns:listarHabitacionXidHuesped" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/listarHabitacionXidHuespedResponse" message="tns:listarHabitacionXidHuespedResponse" />
+    </operation>
+    <operation name="listarReservasEnCurso">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/listarReservasEnCursoRequest" message="tns:listarReservasEnCurso" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/listarReservasEnCursoResponse" message="tns:listarReservasEnCursoResponse" />
+    </operation>
+    <operation name="insertarReservaHabitacion">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/insertarReservaHabitacionRequest" message="tns:insertarReservaHabitacion" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/insertarReservaHabitacionResponse" message="tns:insertarReservaHabitacionResponse" />
+    </operation>
+    <operation name="ListarReservaXIDHuesped">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarReservaXIDHuespedRequest" message="tns:ListarReservaXIDHuesped" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarReservaXIDHuespedResponse" message="tns:ListarReservaXIDHuespedResponse" />
+    </operation>
+    <operation name="eliminarReservaHabitacion">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/eliminarReservaHabitacionRequest" message="tns:eliminarReservaHabitacion" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/eliminarReservaHabitacionResponse" message="tns:eliminarReservaHabitacionResponse" />
+    </operation>
+    <operation name="ListarTodasHabitaciones">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarTodasHabitacionesRequest" message="tns:ListarTodasHabitaciones" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarTodasHabitacionesResponse" message="tns:ListarTodasHabitacionesResponse" />
+    </operation>
+    <operation name="ListarMatrimoniales">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarMatrimonialesRequest" message="tns:ListarMatrimoniales" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarMatrimonialesResponse" message="tns:ListarMatrimonialesResponse" />
+    </operation>
+    <operation name="ListarFamiliar">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarFamiliarRequest" message="tns:ListarFamiliar" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarFamiliarResponse" message="tns:ListarFamiliarResponse" />
+    </operation>
+    <operation name="ListarSimples">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarSimplesRequest" message="tns:ListarSimples" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarSimplesResponse" message="tns:ListarSimplesResponse" />
+    </operation>
+    <operation name="ListarMatrimonialPorFechaYTipo">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarMatrimonialPorFechaYTipoRequest" message="tns:ListarMatrimonialPorFechaYTipo" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarMatrimonialPorFechaYTipoResponse" message="tns:ListarMatrimonialPorFechaYTipoResponse" />
+    </operation>
+    <operation name="ListarFamiliarPorFechaYTipo">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarFamiliarPorFechaYTipoRequest" message="tns:ListarFamiliarPorFechaYTipo" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/ReservasWS/ListarFamiliarPorFechaYTipoResponse" message="tns:ListarFamiliarPorFechaYTipoResponse" />
+    </operation>
+  </portType>
+  <binding name="ReservasWSPortBinding" type="tns:ReservasWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ListarSimplePorFechaYTipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarHabitacionesInicio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarHabitacionXidHuesped">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarReservasEnCurso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarReservaHabitacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarReservaXIDHuesped">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarReservaHabitacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarTodasHabitaciones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarMatrimoniales">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarFamiliar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarSimples">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarMatrimonialPorFechaYTipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarFamiliarPorFechaYTipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ReservasWS">
+    <port name="ReservasWSPort" binding="tns:ReservasWSPortBinding">
+      <soap:address location="http://localhost:8080/LothelSoftWS/ReservasWS" />
+    </port>
+  </service>
+</definitions>

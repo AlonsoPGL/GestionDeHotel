@@ -1,0 +1,305 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="pMaestra.master.cs" Inherits="LothelAplicacionWeb.pMaestra" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/sites.css" rel="stylesheet" />
+    <link href="Content/Fonts/css/all.css" rel="stylesheet" />
+
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-G0iUo1F4g0qR32lV+8NTxL/EkhSVVSfT4TC0M3k5lRVw7GY3ItoXY9Fb4DBBsQqS" crossorigin="anonymous">
+    <link href="Content/Fonts/css/all.css" rel="stylesheet" />
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+</head>
+<body class="landingPage container-fluid">
+    <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <div>
+            <!---------------------Div Superior + logo + login----------------------->
+
+            <div class="menuSup">
+                <div class="row  d-flex align-items-center justify-content-between">
+                    <div class="col-auto">
+                        <p class="col-auto bordeDer">PUCP</p>
+                    </div>
+                    <div class="col-auto">
+                        <img class="logo img-fluid" src="https://img.freepik.com/vector-gratis/plantilla-logotipo-degradado-l_23-2149372723.jpg?size=338&ext=jpg&ga=GA1.1.672697106.1714435200&semt=ais" alt="Logo">
+                    </div>
+
+                    <!-- aqui se colocan Ids para realizar la logica detras del boton y el logeo de la cuenta -->
+                    <div class="col-auto d-flex align-items-center">
+
+                        <div id="botonLogin" class="mr-3" runat="server">
+                            <button type="button" class="btn login-buttonAdmin mr-3" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</button>
+                        </div>
+
+                        <div id="botonPerfil" class="mr-3" runat="server">
+                            <asp:LinkButton runat="server" OnClick="redirectPerfil" type="button" class="btn login-buttonAdmin">Perfil</asp:LinkButton>
+                        </div>
+
+                        <div id="botonServicio" class="mr-3" runat="server">
+                            <asp:LinkButton runat="server" OnClick="btnCerrarSesion_Click" type="button" class="btn login-buttonAdmin">Salir</asp:LinkButton>
+                        </div>
+
+                        <div id="botonRecepcionista" class="mr-3" runat="server">
+                            <asp:LinkButton runat="server" OnClick="btnRegresar_Click" type="button" class="btn login-buttonAdmin">Regresar</asp:LinkButton>
+                        </div>
+
+                        <div id="botonCerrarSesion" runat="server" style="margin-left: 10px;">
+                            <asp:LinkButton ID="btnCerrarSesion" runat="server" OnClick="btnCerrarSesion_Click">
+                                <i class="fas fa-sign-out-alt ml-3" style="color: #d9a13c;"></i>
+                            </asp:LinkButton>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Codigo del modal del login-->
+
+            <div class="modal" id="modalLogin">
+                <div class="modal-dialog">
+                    <div class="modal-content align-content-center">
+                        <div class="col modal-header" style="padding: 15px 20px;">
+                            <h5 class="modal-title" id="exampleModalLabel">Ingrese su cuenta</h5>
+
+                            <div class="ms-auto p-2">
+                                <button type="button" class="close btn btn-outline" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="modal-body" style="padding: 40px 50px;">
+                            <asp:UpdatePanel runat="server">
+                                <ContentTemplate>
+
+                                    <div class="form-group" style="padding: 15px 20px;">
+                                        <label for="usrname">Usuario</label>
+                                        <asp:TextBox ID="cuentaUsuario" runat="server" class="form-control" placeholder="Ingrese su usuario"></asp:TextBox>
+                                    </div>
+
+                                    <div class="form-group" style="padding: 15px 20px;">
+                                        <label for="psw">Contraseña</label>
+                                        <asp:TextBox ID="cuentaPassword" runat="server" class="form-control" TextMode="Password" placeholder="Ingrese su contraseña"></asp:TextBox>
+                                    </div>
+
+                                    <div class="" style="padding: 0px 21px;font-size:15px;">
+                                        <asp:LinkButton ID="btnMostrarPassword" style="color: #d9a13c;" Text="<i class='fa-solid fa-eye pe-2'></i> Mostrar Contraseña" runat="server" OnClick="ClickMostrarPassword"/>
+                     
+                                    </div>
+
+                                    <div class="" style="padding: 0px 21px;font-size:15px;">
+                                        <asp:LinkButton ID="btnOcultarPassword" style="color: #d9a13c;" Text="<i class='fa-solid fa-eye-slash pe-2'></i> Ocultar Contraseña" runat="server" OnClick="ClickOcultarPassword"/>
+                     
+                                    </div>
+                                    
+                                     <div class="d-flex justify-content-center mt-5">
+                                        <asp:LinkButton ID="btnLoguearse" runat="server" CssClass="btn btn-success" Text="<i class='fas fa-sign-in-alt pe-2'></i> Ingresar" OnClick="clickLogearse" />
+                                    </div>
+
+                                    <div class="row text-end">
+                                        <div class="col-md-12">
+                                            <asp:Label ID="lblMensajeErrorCuenta" Style="color: red;" runat="server" Text=""></asp:Label>
+                                        </div>
+                                    </div>
+
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <button id="btnCerrarModal" type="button" runat="server" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--------------------Nav Bar + Menu desplegable------------->
+            <div>
+
+                <nav id="BarraDeNavegacionPrincipal" class="navbar navbar-expand-lg navbar-fixed-top colorNavBar" runat="server">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                                    <li id="lothelNavBar" runat="server" class="nav-item">
+                                        <a class="nav-link mx-lg-4" href="pLothel.aspx">Lothel</a>
+                                    </li>
+
+                                    <li id="habitacionesNavBar" runat="server" class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="habitacionesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Habitaciones
+                                    </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="pHabitaciones.aspx#habitacion1">Familiar</a></li>
+                                            <li><a class="dropdown-item" href="pHabitaciones.aspx#habitacion2">Matrimonial</a></li>
+                                            <li><a class="dropdown-item" href="pHabitaciones.aspx#habitacion3">Simple</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li id="reservacionNavBar" runat="server" class="nav-item">
+                                        <a class="nav-link mx-lg-4" href="pReservas.aspx">Reservación</a>
+                                    </li>
+                                    <li id="serviciosNavBar" runat="server" class="nav-item">
+                                        <a class="nav-link mx-lg-4" href="pServicios.aspx">Servicios</a>
+                                    </li>
+                                    <li id="eventosNavBar" runat="server" class="nav-item">
+                                        <a class="nav-link mx-lg-4" href="pEventos.aspx">Eventos</a>
+                                    </li>
+                                    <li id="contactenosNavBar" runat="server" class="nav-item">
+                                        <a class="nav-link mx-lg-4" href="pContactenos.aspx">Contáctenos</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+
+
+        </div>
+
+        <!-----------------Barra lateral visible solo para administradores------------------->
+
+        <div class="container-fluid d-flex p-0 h-100">
+            <div id="menuLateral" runat="server" class="col-lg-3 order-lg-first" style="background-color: #d9a13c">
+
+                <!--Menu Lateral-->
+                <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 text-white ">
+                    <!--aqui cambio-->
+                    <div class="mynav nav nav-pills flex-column mb-auto">
+                        <div href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#userMenu" aria-expanded="false" aria-controls="userMenu" style="color: white;">
+
+                            <div class="sidebar-link" style="color: white; text-decoration: none">
+                                <i class="fa-solid fa-user m-1 pe-2"></i>
+                                <asp:Label ID="lblNombreBarraLateral" runat="server" Text="Label"></asp:Label>
+                                <!--<button runat="server" OnClick="ocultarMostrarPerfil">-->
+
+                                <i class="fas fa-caret-down float-end" id="toggleUserMenu"></i>
+                                <!--</button>-->
+
+                            </div>
+                        </div>
+
+                        <div class="nav-item">
+
+
+                            <div runat="server" class="collapse mt-3 mb-0 align-content-center" id="userMenu">
+                                <hr />
+                                <ul class="sidebar-dropdown list-unstyled" style="color: white;">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link" style="color: white;">
+                                            <span class="topic text-white">Perfil </span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link" style="color: white;">
+                                            <span class="topic text-white">Configuracion</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <asp:LinkButton runat="server" OnClick="btnDiscAdmin" class="sidebar-link" Style="color: white;">
+                                            <span class="topic text-white">Desconectar</span>
+                                        </asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <ul class="mynav nav nav-pills flex-column mb-auto">
+                        <li class="nav-item mb-1">
+                            <a href="ListarEmpresasProveedoras.aspx"><i class="fa-solid fa-building pe-2"></i>Empresas Externas</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a href="ListarEventos.aspx"><i class="fa-solid fa-calendar pe-2"></i>Eventos</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a href="ListarEspacios.aspx"><i class="fa-solid fa-building pe-2"></i>Espacios</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a href="ListarPersonalDeServicio.aspx"><i class="fa-solid fa-people-group  pe-2"></i>Personal de servicio</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a href="ListarAlimentos.aspx">
+                                <i class="fa-solid fa-box pe-2"></i>
+                                Productos
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="mynav nav nav-pills flex-column mb-auto">
+                        <li class="sidebar-item  nav-item mb-1">
+                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#settings2" aria-expanded="false" aria-controls="settings">
+                                <i class="fa-solid fa-chart-bar pe-2"></i>
+                                <span class="topic">Reportes</span>
+                            </a>
+
+                            <ul id="settings2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar2">
+                                <li class="sidebar-item">
+                                    <a href="ReporteHuespedes.aspx" class="sidebar-link"><i class="fa-solid fa-list pe-2"></i>
+                                        <span class="topic">Huespedes</span>
+                                    </a>
+
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="ReporteHabitaciones.aspx" class="sidebar-link">
+                                        <i class="fa-solid fa-list pe-2"></i>
+                                        <span class="topic">Habitaciones</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="d-flex">
+                        <i class="fa-solid fa-book me-2"></i>
+                        <h6 class="mt-1 mb-0">Lothel-Administrador</h6>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--------------------Herencia Admin---------------------->
+            <div style="width: 100%;">
+                <asp:ContentPlaceHolder ID="bodyAdmin" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+        <!--------------------Herencia Usuario---------------------->
+        <div>
+            <asp:ContentPlaceHolder ID="bodyUser" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>

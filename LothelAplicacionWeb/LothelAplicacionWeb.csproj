@@ -1,0 +1,564 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B041EA18-58E1-4099-B077-BE50BE1F58E8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LothelAplicacionWeb</RootNamespace>
+    <AssemblyName>LothelAplicacionWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LothelSoftWS\EventosWS.wsdl" />
+    <None Include="Connected Services\LothelSoftWS\EventosWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.eliminarEmpresaProveedoraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.empresaProveedora.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.listarEmpresasProveedorasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.registrarEmpresaProveedoraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.eliminarEspacioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.espacio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.listarEspaciosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.registrarEspacioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.obtenerCuentaUserPassResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.persona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.familiar.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.ListarFamiliarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.ListarMatrimonialesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.ListarSimplesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.matrimonial.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.simple.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.modificarEmpresaProveedoraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.registrarHuespedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.alimento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.bebida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.eliminarAlimentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.eliminarBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.eliminarLavanderoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.evento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.listarAlimentosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.listarBebidasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.listarEventosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.listarLavanderosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.modificarAlimentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.modificarBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.modificarEspacioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.modificarLavanderoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.personalDeLavanderia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.registrarAlimentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.registrarBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.registrarLavanderoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.listarPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <!--Se hizo un cambio aqui para commit-->
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.producto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\LothelSoftWS\LothelAplicacionWeb.LothelSoftWS.modificarHuespedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\LothelSoftWS\referencias.disco" />
+    <None Include="Connected Services\LothelSoftWS\configuration91.svcinfo" />
+    <None Include="Connected Services\LothelSoftWS\configuration.svcinfo" />
+    <None Include="Connected Services\LothelSoftWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Fonts\css\all.css" />
+    <Content Include="Content\Fonts\css\all.min.css" />
+    <Content Include="Content\Fonts\css\brands.css" />
+    <Content Include="Content\Fonts\css\brands.min.css" />
+    <Content Include="Content\Fonts\css\fontawesome.css" />
+    <Content Include="Content\Fonts\css\fontawesome.min.css" />
+    <Content Include="Content\Fonts\css\regular.css" />
+    <Content Include="Content\Fonts\css\regular.min.css" />
+    <Content Include="Content\Fonts\css\solid.css" />
+    <Content Include="Content\Fonts\css\solid.min.css" />
+    <Content Include="Content\Fonts\css\svg-with-js.css" />
+    <Content Include="Content\Fonts\css\svg-with-js.min.css" />
+    <Content Include="Content\Fonts\css\v4-font-face.css" />
+    <Content Include="Content\Fonts\css\v4-font-face.min.css" />
+    <Content Include="Content\Fonts\css\v4-shims.css" />
+    <Content Include="Content\Fonts\css\v4-shims.min.css" />
+    <Content Include="Content\Fonts\css\v5-font-face.css" />
+    <Content Include="Content\Fonts\css\v5-font-face.min.css" />
+    <Content Include="Content\sites.css" />
+    <Content Include="images\familiar.jpg" />
+    <Content Include="images\images.png" />
+    <Content Include="images\Matrimonial.jpg" />
+    <Content Include="images\simple.jpg" />
+    <Content Include="ListarBebidas.aspx" />
+    <Content Include="ListarCuidadoPersonal.aspx" />
+    <Content Include="ListarEmpresasProveedoras.aspx" />
+    <Content Include="ListarEspacios.aspx" />
+    <Content Include="ListarEventos.aspx" />
+    <Content Include="ListarMasajistas.aspx" />
+    <Content Include="ListarPersonalDeServicio.aspx" />
+    <Content Include="ListarPersonalRecepcionista.aspx" />
+    <Content Include="ListarAlimentos.aspx" />
+    <Content Include="ListarTickets.aspx" />
+    <Content Include="pContactenos.aspx" />
+    <Content Include="pEventos.aspx" />
+    <Content Include="pHabitaciones.aspx" />
+    <Content Include="pLothel.aspx" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-v4compatibility.woff2" />
+    <None Include="Connected Services\LothelSoftWS\ReservasWS.wsdl" />
+    <None Include="Connected Services\LothelSoftWS\ReservasWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\LothelSoftWS\RRHHWS.wsdl" />
+    <None Include="Connected Services\LothelSoftWS\RRHHWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\LothelSoftWS\VentasWS.wsdl" />
+    <None Include="Connected Services\LothelSoftWS\VentasWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="pPersonalDeLavanderia.aspx" />
+    <Content Include="pPersonalDeMasaje.aspx" />
+    <Content Include="pPruebas.aspx" />
+    <Content Include="pRecepcionista.aspx" />
+    <Content Include="pReservas.aspx" />
+    <Content Include="pServicios.aspx" />
+    <Content Include="pSolicitarServicio.aspx" />
+    <Content Include="pUsuario.aspx" />
+    <Content Include="pVentas.aspx" />
+    <Content Include="RegistrarEvento.aspx" />
+    <Content Include="ReporteHabitaciones.aspx" />
+    <Content Include="ReporteHuespedes.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\LothelScripts\pMaster.js" />
+    <Content Include="Scripts\LothelScripts\pReservaScript.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\LothelSoftWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ListarBebidas.aspx.cs">
+      <DependentUpon>ListarBebidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarBebidas.aspx.designer.cs">
+      <DependentUpon>ListarBebidas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarCuidadoPersonal.aspx.cs">
+      <DependentUpon>ListarCuidadoPersonal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarCuidadoPersonal.aspx.designer.cs">
+      <DependentUpon>ListarCuidadoPersonal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEmpresasProveedoras.aspx.cs">
+      <DependentUpon>ListarEmpresasProveedoras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarEmpresasProveedoras.aspx.designer.cs">
+      <DependentUpon>ListarEmpresasProveedoras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEspacios.aspx.cs">
+      <DependentUpon>ListarEspacios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarEspacios.aspx.designer.cs">
+      <DependentUpon>ListarEspacios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEventos.aspx.cs">
+      <DependentUpon>ListarEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarEventos.aspx.designer.cs">
+      <DependentUpon>ListarEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarMasajistas.aspx.cs">
+      <DependentUpon>ListarMasajistas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarMasajistas.aspx.designer.cs">
+      <DependentUpon>ListarMasajistas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPersonalDeServicio.aspx.cs">
+      <DependentUpon>ListarPersonalDeServicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarPersonalDeServicio.aspx.designer.cs">
+      <DependentUpon>ListarPersonalDeServicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPersonalRecepcionista.aspx.cs">
+      <DependentUpon>ListarPersonalRecepcionista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarPersonalRecepcionista.aspx.designer.cs">
+      <DependentUpon>ListarPersonalRecepcionista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarAlimentos.aspx.cs">
+      <DependentUpon>ListarAlimentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarAlimentos.aspx.designer.cs">
+      <DependentUpon>ListarAlimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarTickets.aspx.cs">
+      <DependentUpon>ListarTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarTickets.aspx.designer.cs">
+      <DependentUpon>ListarTickets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pContactenos.aspx.cs">
+      <DependentUpon>pContactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pContactenos.aspx.designer.cs">
+      <DependentUpon>pContactenos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pEventos.aspx.cs">
+      <DependentUpon>pEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pEventos.aspx.designer.cs">
+      <DependentUpon>pEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pHabitaciones.aspx.cs">
+      <DependentUpon>pHabitaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pHabitaciones.aspx.designer.cs">
+      <DependentUpon>pHabitaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pLothel.aspx.cs">
+      <DependentUpon>pLothel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pLothel.aspx.designer.cs">
+      <DependentUpon>pLothel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pMaestra.Master.cs">
+      <DependentUpon>pMaestra.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pMaestra.Master.designer.cs">
+      <DependentUpon>pMaestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="pPersonalDeLavanderia.aspx.cs">
+      <DependentUpon>pPersonalDeLavanderia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pPersonalDeLavanderia.aspx.designer.cs">
+      <DependentUpon>pPersonalDeLavanderia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pPersonalDeMasaje.aspx.cs">
+      <DependentUpon>pPersonalDeMasaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pPersonalDeMasaje.aspx.designer.cs">
+      <DependentUpon>pPersonalDeMasaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pPruebas.aspx.cs">
+      <DependentUpon>pPruebas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pPruebas.aspx.designer.cs">
+      <DependentUpon>pPruebas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pRecepcionista.aspx.cs">
+      <DependentUpon>pRecepcionista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pRecepcionista.aspx.designer.cs">
+      <DependentUpon>pRecepcionista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pReservas.aspx.cs">
+      <DependentUpon>pReservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pReservas.aspx.designer.cs">
+      <DependentUpon>pReservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pServicios.aspx.cs">
+      <DependentUpon>pServicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pServicios.aspx.designer.cs">
+      <DependentUpon>pServicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pSolicitarServicio.aspx.cs">
+      <DependentUpon>pSolicitarServicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pSolicitarServicio.aspx.designer.cs">
+      <DependentUpon>pSolicitarServicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pUsuario.aspx.cs">
+      <DependentUpon>pUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pUsuario.aspx.designer.cs">
+      <DependentUpon>pUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pVentas.aspx.cs">
+      <DependentUpon>pVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pVentas.aspx.designer.cs">
+      <DependentUpon>pVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarEvento.aspx.cs">
+      <DependentUpon>RegistrarEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarEvento.aspx.designer.cs">
+      <DependentUpon>RegistrarEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteHabitaciones.aspx.cs">
+      <DependentUpon>ReporteHabitaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteHabitaciones.aspx.designer.cs">
+      <DependentUpon>ReporteHabitaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteHuespedes.aspx.cs">
+      <DependentUpon>ReporteHuespedes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteHuespedes.aspx.designer.cs">
+      <DependentUpon>ReporteHuespedes.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pMaestra.Master" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\LothelSoftWS\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50437</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50437/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

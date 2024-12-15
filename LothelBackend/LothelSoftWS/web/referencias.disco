@@ -1,0 +1,7 @@
+<discovery xmlns="http://schemas.xmlsoap.org/disco/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/LothelSoftWS/EventosWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/LothelSoftWS/RRHHWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/LothelSoftWS/ReservasWS?WSDL"/>
+    <contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="http://localhost:8080/LothelSoftWS/VentasWS?WSDL"/>
+</discovery>

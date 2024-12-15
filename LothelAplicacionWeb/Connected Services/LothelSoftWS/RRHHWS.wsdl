@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lothel.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="RRHHWS" targetNamespace="http://services.lothel.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LothelSoftWS/RRHHWS?xsd=1" namespace="http://services.lothel.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="ListarServiciosMasajistaPorEntregar">
+    <part name="parameters" element="tns:ListarServiciosMasajistaPorEntregar" />
+  </message>
+  <message name="ListarServiciosMasajistaPorEntregarResponse">
+    <part name="parameters" element="tns:ListarServiciosMasajistaPorEntregarResponse" />
+  </message>
+  <message name="ListarServiciosLavanderoPorEntregar">
+    <part name="parameters" element="tns:ListarServiciosLavanderoPorEntregar" />
+  </message>
+  <message name="ListarServiciosLavanderoPorEntregarResponse">
+    <part name="parameters" element="tns:ListarServiciosLavanderoPorEntregarResponse" />
+  </message>
+  <message name="obtenerCuentaUserPass">
+    <part name="parameters" element="tns:obtenerCuentaUserPass" />
+  </message>
+  <message name="obtenerCuentaUserPassResponse">
+    <part name="parameters" element="tns:obtenerCuentaUserPassResponse" />
+  </message>
+  <message name="AgregardescripcionMasaje">
+    <part name="parameters" element="tns:AgregardescripcionMasaje" />
+  </message>
+  <message name="AgregardescripcionMasajeResponse">
+    <part name="parameters" element="tns:AgregardescripcionMasajeResponse" />
+  </message>
+  <message name="GenerarReporteHuespedes">
+    <part name="parameters" element="tns:GenerarReporteHuespedes" />
+  </message>
+  <message name="GenerarReporteHuespedesResponse">
+    <part name="parameters" element="tns:GenerarReporteHuespedesResponse" />
+  </message>
+  <message name="GenerarReporteHabitaciones">
+    <part name="parameters" element="tns:GenerarReporteHabitaciones" />
+  </message>
+  <message name="GenerarReporteHabitacionesResponse">
+    <part name="parameters" element="tns:GenerarReporteHabitacionesResponse" />
+  </message>
+  <message name="listarRecepcionistas">
+    <part name="parameters" element="tns:listarRecepcionistas" />
+  </message>
+  <message name="listarRecepcionistasResponse">
+    <part name="parameters" element="tns:listarRecepcionistasResponse" />
+  </message>
+  <message name="registrarRecepcionista">
+    <part name="parameters" element="tns:registrarRecepcionista" />
+  </message>
+  <message name="registrarRecepcionistaResponse">
+    <part name="parameters" element="tns:registrarRecepcionistaResponse" />
+  </message>
+  <message name="ParseException">
+    <part name="fault" element="tns:ParseException" />
+  </message>
+  <message name="listarHuespedesXPeriodo">
+    <part name="parameters" element="tns:listarHuespedesXPeriodo" />
+  </message>
+  <message name="listarHuespedesXPeriodoResponse">
+    <part name="parameters" element="tns:listarHuespedesXPeriodoResponse" />
+  </message>
+  <message name="eliminarRecepcionista">
+    <part name="parameters" element="tns:eliminarRecepcionista" />
+  </message>
+  <message name="eliminarRecepcionistaResponse">
+    <part name="parameters" element="tns:eliminarRecepcionistaResponse" />
+  </message>
+  <message name="modificarPedidoPendiente">
+    <part name="parameters" element="tns:modificarPedidoPendiente" />
+  </message>
+  <message name="modificarPedidoPendienteResponse">
+    <part name="parameters" element="tns:modificarPedidoPendienteResponse" />
+  </message>
+  <message name="ListarServiciosMasajista">
+    <part name="parameters" element="tns:ListarServiciosMasajista" />
+  </message>
+  <message name="ListarServiciosMasajistaResponse">
+    <part name="parameters" element="tns:ListarServiciosMasajistaResponse" />
+  </message>
+  <message name="ListarServiciosLavandero">
+    <part name="parameters" element="tns:ListarServiciosLavandero" />
+  </message>
+  <message name="ListarServiciosLavanderoResponse">
+    <part name="parameters" element="tns:ListarServiciosLavanderoResponse" />
+  </message>
+  <message name="modificarRecepcionista">
+    <part name="parameters" element="tns:modificarRecepcionista" />
+  </message>
+  <message name="modificarRecepcionistaResponse">
+    <part name="parameters" element="tns:modificarRecepcionistaResponse" />
+  </message>
+  <message name="listarMasajistas">
+    <part name="parameters" element="tns:listarMasajistas" />
+  </message>
+  <message name="listarMasajistasResponse">
+    <part name="parameters" element="tns:listarMasajistasResponse" />
+  </message>
+  <message name="eliminarLavandero">
+    <part name="parameters" element="tns:eliminarLavandero" />
+  </message>
+  <message name="eliminarLavanderoResponse">
+    <part name="parameters" element="tns:eliminarLavanderoResponse" />
+  </message>
+  <message name="modificarMasajista">
+    <part name="parameters" element="tns:modificarMasajista" />
+  </message>
+  <message name="modificarMasajistaResponse">
+    <part name="parameters" element="tns:modificarMasajistaResponse" />
+  </message>
+  <message name="modificarLavandero">
+    <part name="parameters" element="tns:modificarLavandero" />
+  </message>
+  <message name="modificarLavanderoResponse">
+    <part name="parameters" element="tns:modificarLavanderoResponse" />
+  </message>
+  <message name="eliminarMasajista">
+    <part name="parameters" element="tns:eliminarMasajista" />
+  </message>
+  <message name="eliminarMasajistaResponse">
+    <part name="parameters" element="tns:eliminarMasajistaResponse" />
+  </message>
+  <message name="registrarHuesped">
+    <part name="parameters" element="tns:registrarHuesped" />
+  </message>
+  <message name="registrarHuespedResponse">
+    <part name="parameters" element="tns:registrarHuespedResponse" />
+  </message>
+  <message name="modificarHuesped">
+    <part name="parameters" element="tns:modificarHuesped" />
+  </message>
+  <message name="modificarHuespedResponse">
+    <part name="parameters" element="tns:modificarHuespedResponse" />
+  </message>
+  <message name="registrarMasajista">
+    <part name="parameters" element="tns:registrarMasajista" />
+  </message>
+  <message name="registrarMasajistaResponse">
+    <part name="parameters" element="tns:registrarMasajistaResponse" />
+  </message>
+  <message name="registrarLavandero">
+    <part name="parameters" element="tns:registrarLavandero" />
+  </message>
+  <message name="registrarLavanderoResponse">
+    <part name="parameters" element="tns:registrarLavanderoResponse" />
+  </message>
+  <message name="Agregardescripcion">
+    <part name="parameters" element="tns:Agregardescripcion" />
+  </message>
+  <message name="AgregardescripcionResponse">
+    <part name="parameters" element="tns:AgregardescripcionResponse" />
+  </message>
+  <message name="listarLavanderos">
+    <part name="parameters" element="tns:listarLavanderos" />
+  </message>
+  <message name="listarLavanderosResponse">
+    <part name="parameters" element="tns:listarLavanderosResponse" />
+  </message>
+  <message name="modificarPedidoPendienteMasajista">
+    <part name="parameters" element="tns:modificarPedidoPendienteMasajista" />
+  </message>
+  <message name="modificarPedidoPendienteMasajistaResponse">
+    <part name="parameters" element="tns:modificarPedidoPendienteMasajistaResponse" />
+  </message>
+  <portType name="RRHHWS">
+    <operation name="ListarServiciosMasajistaPorEntregar">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/ListarServiciosMasajistaPorEntregarRequest" message="tns:ListarServiciosMasajistaPorEntregar" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/ListarServiciosMasajistaPorEntregarResponse" message="tns:ListarServiciosMasajistaPorEntregarResponse" />
+    </operation>
+    <operation name="ListarServiciosLavanderoPorEntregar">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/ListarServiciosLavanderoPorEntregarRequest" message="tns:ListarServiciosLavanderoPorEntregar" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/ListarServiciosLavanderoPorEntregarResponse" message="tns:ListarServiciosLavanderoPorEntregarResponse" />
+    </operation>
+    <operation name="obtenerCuentaUserPass">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/obtenerCuentaUserPassRequest" message="tns:obtenerCuentaUserPass" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/obtenerCuentaUserPassResponse" message="tns:obtenerCuentaUserPassResponse" />
+    </operation>
+    <operation name="AgregardescripcionMasaje">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/AgregardescripcionMasajeRequest" message="tns:AgregardescripcionMasaje" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/AgregardescripcionMasajeResponse" message="tns:AgregardescripcionMasajeResponse" />
+    </operation>
+    <operation name="GenerarReporteHuespedes">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/GenerarReporteHuespedesRequest" message="tns:GenerarReporteHuespedes" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/GenerarReporteHuespedesResponse" message="tns:GenerarReporteHuespedesResponse" />
+    </operation>
+    <operation name="GenerarReporteHabitaciones">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/GenerarReporteHabitacionesRequest" message="tns:GenerarReporteHabitaciones" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/GenerarReporteHabitacionesResponse" message="tns:GenerarReporteHabitacionesResponse" />
+    </operation>
+    <operation name="listarRecepcionistas">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/listarRecepcionistasRequest" message="tns:listarRecepcionistas" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/listarRecepcionistasResponse" message="tns:listarRecepcionistasResponse" />
+    </operation>
+    <operation name="registrarRecepcionista">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarRecepcionistaRequest" message="tns:registrarRecepcionista" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarRecepcionistaResponse" message="tns:registrarRecepcionistaResponse" />
+      <fault wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarRecepcionista/Fault/ParseException" name="ParseException" message="tns:ParseException" />
+    </operation>
+    <operation name="listarHuespedesXPeriodo">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/listarHuespedesXPeriodoRequest" message="tns:listarHuespedesXPeriodo" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/listarHuespedesXPeriodoResponse" message="tns:listarHuespedesXPeriodoResponse" />
+    </operation>
+    <operation name="eliminarRecepcionista">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/eliminarRecepcionistaRequest" message="tns:eliminarRecepcionista" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/eliminarRecepcionistaResponse" message="tns:eliminarRecepcionistaResponse" />
+    </operation>
+    <operation name="modificarPedidoPendiente">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarPedidoPendienteRequest" message="tns:modificarPedidoPendiente" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarPedidoPendienteResponse" message="tns:modificarPedidoPendienteResponse" />
+    </operation>
+    <operation name="ListarServiciosMasajista">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/ListarServiciosMasajistaRequest" message="tns:ListarServiciosMasajista" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/ListarServiciosMasajistaResponse" message="tns:ListarServiciosMasajistaResponse" />
+    </operation>
+    <operation name="ListarServiciosLavandero">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/ListarServiciosLavanderoRequest" message="tns:ListarServiciosLavandero" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/ListarServiciosLavanderoResponse" message="tns:ListarServiciosLavanderoResponse" />
+    </operation>
+    <operation name="modificarRecepcionista">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarRecepcionistaRequest" message="tns:modificarRecepcionista" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarRecepcionistaResponse" message="tns:modificarRecepcionistaResponse" />
+    </operation>
+    <operation name="listarMasajistas">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/listarMasajistasRequest" message="tns:listarMasajistas" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/listarMasajistasResponse" message="tns:listarMasajistasResponse" />
+    </operation>
+    <operation name="eliminarLavandero">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/eliminarLavanderoRequest" message="tns:eliminarLavandero" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/eliminarLavanderoResponse" message="tns:eliminarLavanderoResponse" />
+    </operation>
+    <operation name="modificarMasajista">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarMasajistaRequest" message="tns:modificarMasajista" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarMasajistaResponse" message="tns:modificarMasajistaResponse" />
+    </operation>
+    <operation name="modificarLavandero">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarLavanderoRequest" message="tns:modificarLavandero" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarLavanderoResponse" message="tns:modificarLavanderoResponse" />
+    </operation>
+    <operation name="eliminarMasajista">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/eliminarMasajistaRequest" message="tns:eliminarMasajista" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/eliminarMasajistaResponse" message="tns:eliminarMasajistaResponse" />
+    </operation>
+    <operation name="registrarHuesped">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarHuespedRequest" message="tns:registrarHuesped" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarHuespedResponse" message="tns:registrarHuespedResponse" />
+    </operation>
+    <operation name="modificarHuesped">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarHuespedRequest" message="tns:modificarHuesped" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarHuespedResponse" message="tns:modificarHuespedResponse" />
+    </operation>
+    <operation name="registrarMasajista">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarMasajistaRequest" message="tns:registrarMasajista" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarMasajistaResponse" message="tns:registrarMasajistaResponse" />
+      <fault wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarMasajista/Fault/ParseException" name="ParseException" message="tns:ParseException" />
+    </operation>
+    <operation name="registrarLavandero">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarLavanderoRequest" message="tns:registrarLavandero" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarLavanderoResponse" message="tns:registrarLavanderoResponse" />
+      <fault wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/registrarLavandero/Fault/ParseException" name="ParseException" message="tns:ParseException" />
+    </operation>
+    <operation name="Agregardescripcion">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/AgregardescripcionRequest" message="tns:Agregardescripcion" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/AgregardescripcionResponse" message="tns:AgregardescripcionResponse" />
+    </operation>
+    <operation name="listarLavanderos">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/listarLavanderosRequest" message="tns:listarLavanderos" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/listarLavanderosResponse" message="tns:listarLavanderosResponse" />
+    </operation>
+    <operation name="modificarPedidoPendienteMasajista">
+      <input wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarPedidoPendienteMasajistaRequest" message="tns:modificarPedidoPendienteMasajista" />
+      <output wsam:Action="http://services.lothel.pucp.edu.pe/RRHHWS/modificarPedidoPendienteMasajistaResponse" message="tns:modificarPedidoPendienteMasajistaResponse" />
+    </operation>
+  </portType>
+  <binding name="RRHHWSPortBinding" type="tns:RRHHWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ListarServiciosMasajistaPorEntregar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarServiciosLavanderoPorEntregar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerCuentaUserPass">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AgregardescripcionMasaje">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GenerarReporteHuespedes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GenerarReporteHabitaciones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarRecepcionistas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registrarRecepcionista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="ParseException">
+        <soap:fault use="literal" name="ParseException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="listarHuespedesXPeriodo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarRecepcionista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPedidoPendiente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarServiciosMasajista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarServiciosLavandero">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarRecepcionista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMasajistas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarLavandero">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarMasajista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarLavandero">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarMasajista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registrarHuesped">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarHuesped">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registrarMasajista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="ParseException">
+        <soap:fault use="literal" name="ParseException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="registrarLavandero">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="ParseException">
+        <soap:fault use="literal" name="ParseException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="Agregardescripcion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarLavanderos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPedidoPendienteMasajista">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="RRHHWS">
+    <port name="RRHHWSPort" binding="tns:RRHHWSPortBinding">
+      <soap:address location="http://localhost:8080/LothelSoftWS/RRHHWS" />
+    </port>
+  </service>
+</definitions>

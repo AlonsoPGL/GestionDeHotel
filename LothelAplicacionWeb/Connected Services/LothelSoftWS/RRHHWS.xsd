@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.lothel.pucp.edu.pe/" targetNamespace="http://services.lothel.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Agregardescripcion" type="tns:Agregardescripcion" />
+  <xs:element name="AgregardescripcionMasaje" type="tns:AgregardescripcionMasaje" />
+  <xs:element name="AgregardescripcionMasajeResponse" type="tns:AgregardescripcionMasajeResponse" />
+  <xs:element name="AgregardescripcionResponse" type="tns:AgregardescripcionResponse" />
+  <xs:element name="GenerarReporteHabitaciones" type="tns:GenerarReporteHabitaciones" />
+  <xs:element name="GenerarReporteHabitacionesResponse" type="tns:GenerarReporteHabitacionesResponse" />
+  <xs:element name="GenerarReporteHuespedes" type="tns:GenerarReporteHuespedes" />
+  <xs:element name="GenerarReporteHuespedesResponse" type="tns:GenerarReporteHuespedesResponse" />
+  <xs:element name="ListarServiciosLavandero" type="tns:ListarServiciosLavandero" />
+  <xs:element name="ListarServiciosLavanderoPorEntregar" type="tns:ListarServiciosLavanderoPorEntregar" />
+  <xs:element name="ListarServiciosLavanderoPorEntregarResponse" type="tns:ListarServiciosLavanderoPorEntregarResponse" />
+  <xs:element name="ListarServiciosLavanderoResponse" type="tns:ListarServiciosLavanderoResponse" />
+  <xs:element name="ListarServiciosMasajista" type="tns:ListarServiciosMasajista" />
+  <xs:element name="ListarServiciosMasajistaPorEntregar" type="tns:ListarServiciosMasajistaPorEntregar" />
+  <xs:element name="ListarServiciosMasajistaPorEntregarResponse" type="tns:ListarServiciosMasajistaPorEntregarResponse" />
+  <xs:element name="ListarServiciosMasajistaResponse" type="tns:ListarServiciosMasajistaResponse" />
+  <xs:element name="ParseException" type="tns:ParseException" />
+  <xs:element name="eliminarLavandero" type="tns:eliminarLavandero" />
+  <xs:element name="eliminarLavanderoResponse" type="tns:eliminarLavanderoResponse" />
+  <xs:element name="eliminarMasajista" type="tns:eliminarMasajista" />
+  <xs:element name="eliminarMasajistaResponse" type="tns:eliminarMasajistaResponse" />
+  <xs:element name="eliminarRecepcionista" type="tns:eliminarRecepcionista" />
+  <xs:element name="eliminarRecepcionistaResponse" type="tns:eliminarRecepcionistaResponse" />
+  <xs:element name="listarHuespedesXPeriodo" type="tns:listarHuespedesXPeriodo" />
+  <xs:element name="listarHuespedesXPeriodoResponse" type="tns:listarHuespedesXPeriodoResponse" />
+  <xs:element name="listarLavanderos" type="tns:listarLavanderos" />
+  <xs:element name="listarLavanderosResponse" type="tns:listarLavanderosResponse" />
+  <xs:element name="listarMasajistas" type="tns:listarMasajistas" />
+  <xs:element name="listarMasajistasResponse" type="tns:listarMasajistasResponse" />
+  <xs:element name="listarRecepcionistas" type="tns:listarRecepcionistas" />
+  <xs:element name="listarRecepcionistasResponse" type="tns:listarRecepcionistasResponse" />
+  <xs:element name="modificarHuesped" type="tns:modificarHuesped" />
+  <xs:element name="modificarHuespedResponse" type="tns:modificarHuespedResponse" />
+  <xs:element name="modificarLavandero" type="tns:modificarLavandero" />
+  <xs:element name="modificarLavanderoResponse" type="tns:modificarLavanderoResponse" />
+  <xs:element name="modificarMasajista" type="tns:modificarMasajista" />
+  <xs:element name="modificarMasajistaResponse" type="tns:modificarMasajistaResponse" />
+  <xs:element name="modificarPedidoPendiente" type="tns:modificarPedidoPendiente" />
+  <xs:element name="modificarPedidoPendienteMasajista" type="tns:modificarPedidoPendienteMasajista" />
+  <xs:element name="modificarPedidoPendienteMasajistaResponse" type="tns:modificarPedidoPendienteMasajistaResponse" />
+  <xs:element name="modificarPedidoPendienteResponse" type="tns:modificarPedidoPendienteResponse" />
+  <xs:element name="modificarRecepcionista" type="tns:modificarRecepcionista" />
+  <xs:element name="modificarRecepcionistaResponse" type="tns:modificarRecepcionistaResponse" />
+  <xs:element name="obtenerCuentaUserPass" type="tns:obtenerCuentaUserPass" />
+  <xs:element name="obtenerCuentaUserPassResponse" type="tns:obtenerCuentaUserPassResponse" />
+  <xs:element name="registrarHuesped" type="tns:registrarHuesped" />
+  <xs:element name="registrarHuespedResponse" type="tns:registrarHuespedResponse" />
+  <xs:element name="registrarLavandero" type="tns:registrarLavandero" />
+  <xs:element name="registrarLavanderoResponse" type="tns:registrarLavanderoResponse" />
+  <xs:element name="registrarMasajista" type="tns:registrarMasajista" />
+  <xs:element name="registrarMasajistaResponse" type="tns:registrarMasajistaResponse" />
+  <xs:element name="registrarRecepcionista" type="tns:registrarRecepcionista" />
+  <xs:element name="registrarRecepcionistaResponse" type="tns:registrarRecepcionistaResponse" />
+  <xs:complexType name="listarLavanderos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarLavanderosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:personalDeLavanderia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="personalDeLavanderia">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:personalDeServicio">
+        <xs:sequence>
+          <xs:element name="autorizacionDeRiesgoBiologico" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="personalDeServicio">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:operario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="administrador" type="tns:administrador" />
+          <xs:element name="estadoPS" type="xs:boolean" />
+          <xs:element minOccurs="0" name="turno" type="tns:tipoTurno" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="operario">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="fechaContratacion" type="xs:dateTime" />
+          <xs:element name="sueldo" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="celular" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="cuenta" type="tns:cuenta" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element name="estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fechaRegistro" type="xs:dateTime" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="administrador">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:operario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="rol" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="cuenta">
+    <xs:sequence>
+      <xs:element name="idCuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="tipocuenta" type="tns:tipoCuenta" />
+      <xs:element minOccurs="0" name="user" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarServiciosLavandero">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListarServiciosLavanderoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="anotacionesServicio" type="xs:string" />
+      <xs:element minOccurs="0" name="documentoPago" type="tns:documentoDePago" />
+      <xs:element minOccurs="0" name="estado" type="tns:estadoPedido" />
+      <xs:element minOccurs="0" name="fechaSolicitud" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horaFinServicio" type="xs:dateTime" />
+      <xs:element name="idPedido" type="xs:int" />
+      <xs:element minOccurs="0" name="incidenciaDeHabitacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="items" nillable="true" type="tns:item" />
+      <xs:element name="montoAcumulado" type="xs:double" />
+      <xs:element minOccurs="0" name="nombreHuesped" type="xs:string" />
+      <xs:element name="numHabitacion" type="xs:int" />
+      <xs:element name="pisoHabitacion" type="xs:int" />
+      <xs:element minOccurs="0" name="reserva" type="tns:reservaHabitacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="documentoDePago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaEmision" type="xs:dateTime" />
+      <xs:element name="idDocumentoPago" type="xs:int" />
+      <xs:element minOccurs="0" name="pedido" type="tns:pedido" />
+      <xs:element minOccurs="0" name="tipo" type="tns:tipoDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="item">
+    <xs:sequence>
+      <xs:element name="calificacion" type="xs:double" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idIteam" type="xs:int" />
+      <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pedido" nillable="true" type="tns:pedido" />
+      <xs:element name="precio" type="xs:double" />
+      <xs:element minOccurs="0" name="urlImagen" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reservaHabitacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estado" type="tns:estadoReserva" />
+      <xs:element minOccurs="0" name="fechaDeReserva" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="habitacion" type="tns:habitacion" />
+      <xs:element minOccurs="0" name="huesped" type="tns:huesped" />
+      <xs:element name="idReserva" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="habitacion">
+    <xs:sequence>
+      <xs:element name="cantHuespedes" type="xs:int" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="estado" type="xs:boolean" />
+      <xs:element name="idHabitacion" type="xs:int" />
+      <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
+      <xs:element name="numeroDeCamas" type="xs:int" />
+      <xs:element name="piso" type="xs:int" />
+      <xs:element name="precio" type="xs:double" />
+      <xs:element name="reservado" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="reservas" nillable="true" type="tns:reservaHabitacion" />
+      <xs:element name="stock" type="xs:int" />
+      <xs:element minOccurs="0" name="titulo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="huesped">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="esVIP" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="eliminarLavandero">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarLavanderoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarHuesped">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="huesped" type="tns:huesped" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarHuespedResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarRecepcionista">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarRecepcionistaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarServiciosMasajista">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListarServiciosMasajistaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarRecepcionista">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="recepcionista" type="tns:recepcionista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recepcionista">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:personalDeServicio">
+        <xs:sequence>
+          <xs:element name="deuda" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="modificarRecepcionistaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Agregardescripcion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pedido" type="tns:pedido" />
+      <xs:element minOccurs="0" name="cadena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregardescripcionResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="modificarMasajista">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="masajista" type="tns:personalDeMasajes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="personalDeMasajes">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:personalDeServicio">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="especializacion" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="modificarMasajistaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMasajistas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarMasajistasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:personalDeMasajes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregardescripcionMasaje">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pedido" type="tns:pedido" />
+      <xs:element minOccurs="0" name="cadena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregardescripcionMasajeResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="GenerarReporteHuespedes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GenerarReporteHuespedesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarHuesped">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="huesped" type="tns:huesped" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarHuespedResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPedidoPendienteMasajista">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pedido" type="tns:pedido" />
+      <xs:element minOccurs="0" name="cadena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPedidoPendienteMasajistaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRecepcionistas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarRecepcionistasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:recepcionista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarLavandero">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lavandero" type="tns:personalDeLavanderia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarLavanderoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarServiciosLavanderoPorEntregar">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListarServiciosLavanderoPorEntregarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPedidoPendiente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pedido" type="tns:pedido" />
+      <xs:element minOccurs="0" name="cadena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPedidoPendienteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerCuentaUserPass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerCuentaUserPassResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:persona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarServiciosMasajistaPorEntregar">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ListarServiciosMasajistaPorEntregarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarLavandero">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lavandero" type="tns:personalDeLavanderia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarLavanderoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParseException">
+    <xs:sequence>
+      <xs:element name="errorOffset" type="xs:int" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GenerarReporteHabitaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GenerarReporteHabitacionesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarHuespedesXPeriodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarHuespedesXPeriodoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:huesped" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMasajista">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMasajistaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarMasajista">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="masajista" type="tns:personalDeMasajes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarMasajistaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarRecepcionista">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="recepcionista" type="tns:recepcionista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarRecepcionistaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="tipoCuenta">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADMINISTRADOR" />
+      <xs:enumeration value="HUESPED" />
+      <xs:enumeration value="PERSONAL_DE_LAVANDERIA" />
+      <xs:enumeration value="PERSONAL_DE_MASAJES" />
+      <xs:enumeration value="RECEPCIONISTA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoTurno">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MAÑANA" />
+      <xs:enumeration value="TARDE" />
+      <xs:enumeration value="NOCHE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoDocumento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BOLETA" />
+      <xs:enumeration value="FACTURA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="estadoPedido">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Confirmada" />
+      <xs:enumeration value="Pendiente" />
+      <xs:enumeration value="Cancelada" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="estadoReserva">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EN_CURSO" />
+      <xs:enumeration value="COMPLETADA" />
+      <xs:enumeration value="CONFIRMADA" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
